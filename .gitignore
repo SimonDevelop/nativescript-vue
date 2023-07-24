@@ -2,6 +2,7 @@
 hooks/
 node_modules/
 platforms/
+App_Resources/
 
 # Logs
 logs
