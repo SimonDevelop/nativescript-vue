@@ -14,9 +14,8 @@
       <Label class="page__content-placeholder" :text="message" />
 
       <StackLayout>
-        <Button @tap="increment" text="+" />
-        <Button @tap="decrement" text="-" />
-        <Label :text="count" />
+        <Button @tap="moins" text="-" class="btn btn-outline" />
+        <Button @tap="plus" text="+" class="btn btn-outline" />
       </StackLayout>
     </GridLayout>
   </Page>
@@ -25,6 +24,7 @@
 <script>
 import * as utils from '~/shared/utils';
 import { SelectedPageService } from '../shared/selected-page-service';
+import { mapActions } from 'vuex';
 
 export default {
   mounted() {
@@ -32,12 +32,18 @@ export default {
   },
   computed: {
     message() {
-      return '<!-- Page content goes here -->';
+      return this.$store.state.counter.count.toString();
     },
   },
   methods: {
     onDrawerButtonTap() {
       utils.showDrawer();
+    },
+    moins() {
+      this.$store.commit('decrement');
+    },
+    plus() {
+      this.$store.commit('increment');
     },
   },
 };

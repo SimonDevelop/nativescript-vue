@@ -1,18 +1,16 @@
 import Vue from 'nativescript-vue';
 import Vuex from 'vuex';
 
+import counter from './modules/counter';
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  state: {
-    count: 0,
-  },
-  mutations: {
-    increment: (state) => state.count++,
-    decrement: (state) => state.count--,
+  modules: {
+    counter,
   },
 });
 
 Vue.prototype.$store = store;
 
-module.exports = store;
+export default store;
