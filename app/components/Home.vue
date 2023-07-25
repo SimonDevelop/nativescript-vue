@@ -12,6 +12,12 @@
     <GridLayout class="page__content">
       <Label class="page__content-icon fas" text.decode="&#xf015;" />
       <Label class="page__content-placeholder" :text="message" />
+
+      <StackLayout>
+        <Button @tap="increment" text="+" />
+        <Button @tap="decrement" text="-" />
+        <Label :text="count" />
+      </StackLayout>
     </GridLayout>
   </Page>
 </template>
