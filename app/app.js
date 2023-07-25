@@ -1,12 +1,19 @@
-import Vue from 'nativescript-vue'
-import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
+import Vue from 'nativescript-vue';
+import RadSideDrawer from 'nativescript-ui-sidedrawer/vue';
 
-Vue.use(RadSideDrawer)
+Vue.use(RadSideDrawer);
 
-import App from './components/App'
+import App from './components/App';
 
-Vue.config.silent = !__DEV__
+Vue.config.silent = !__DEV__;
+
+const message = {
+  created() {
+    console.log('bonjour');
+  },
+};
 
 new Vue({
-  render: h => h(App)
-}).$start()
+  render: (h) => h(App),
+  mixins: [message],
+}).$start();
