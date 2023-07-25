@@ -6,6 +6,7 @@ Vue.use(Vuex);
 Vue.use(RadSideDrawer);
 
 import App from './components/App';
+import Store from './store/index';
 
 Vue.config.silent = !__DEV__;
 
@@ -19,10 +20,8 @@ new Vue({
   render: (h) => h(App),
   mixins: [message],
   data() {
-    return {
-      
-    }
-  }
+    return {};
+  },
   computed: {
     count() {
       return store.state.count;
@@ -36,4 +35,5 @@ new Vue({
       store.commit('decrement');
     },
   },
+  store: Store,
 }).$start();
