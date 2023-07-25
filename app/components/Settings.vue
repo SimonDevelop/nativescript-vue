@@ -25,6 +25,7 @@
             hint="Votre mot de passe"
             secure="true"
           />
+          <Button text="Se connecter" @tap="onConnect" />
         </StackLayout>
       </ScrollView>
     </GridLayout>
@@ -43,6 +44,9 @@ export default {
   methods: {
     onDrawerButtonTap() {
       utils.showDrawer();
+    },
+    onConnect() {
+      this.$store.commit('switch');
     },
   },
 };

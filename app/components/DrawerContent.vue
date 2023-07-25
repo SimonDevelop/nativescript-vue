@@ -100,9 +100,11 @@ export default {
   },
   methods: {
     onNavigationItemTap(component) {
-      this.$navigateTo(component, {
-        clearHistory: true,
-      });
+      if (this.$store.state.connected.auth) {
+        this.$navigateTo(component, {
+          clearHistory: true,
+        });
+      }
       utils.closeDrawer();
     },
   },
